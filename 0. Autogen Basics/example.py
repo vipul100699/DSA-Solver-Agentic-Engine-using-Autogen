@@ -21,8 +21,8 @@ openai_client = OpenAIChatCompletionClient(
         "function_calling": True,
         "json_output": True,
         "structured_output": True,
-        },
-    )
+    },
+)
 
 # Define a custom function to reverse a string
 def reverse_string(s: str) -> str:
