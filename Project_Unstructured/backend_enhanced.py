@@ -38,7 +38,7 @@ openai_client = OpenAIChatCompletionClient(
 async def main():
 
     docker = DockerCommandLineCodeExecutor(
-        work_dir="/tmp",
+        work_dir="temp",
         timeout=120
     )
 
