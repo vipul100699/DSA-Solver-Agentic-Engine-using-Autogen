@@ -1,0 +1,52 @@
+import sys
+
+def add_numbers(num1=None, num2=None):
+    if num1 is None:
+        while True:
+            try:
+                num1 = float(input("Enter the first number: "))
+                break
+            except EOFError:
+                print("Error: Cannot get input from user.")
+                sys.exit(1)
+    if num2 is None:
+        while True:
+            try:
+                num2 = float(input("Enter the second number: "))
+                break
+            except EOFError:
+                print("Error: Cannot get input from user.")
+                sys.exit(1)
+
+    try:
+        result = num1 + num2
+        print("The sum of the two numbers is: ", result)
+    except Exception as e:
+        print("Error: " + str(e))
+
+# Test cases:
+try:
+    add_numbers()
+except EOFError:
+    print("Error: Cannot get input from user.")
+
+try:
+    add_numbers('five')
+except ValueError:
+    print("Error: Invalid input. Please enter a valid number.")
+
+try:
+    add_numbers(-3.5, 2.5)
+except Exception as e:
+    print("Error: " + str(e))
+
+class AddNumbersTest:
+    def test_add_numbers(self):
+        try:
+            add_numbers(1, 4)
+            self.assertTrue(True)
+        except Exception as e:
+            print("Error: " + str(e))
+
+test = AddNumbersTest()
+test.test_add_numbers()

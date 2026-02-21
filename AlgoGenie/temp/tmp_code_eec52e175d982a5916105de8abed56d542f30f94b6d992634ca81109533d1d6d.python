@@ -1,0 +1,14 @@
+import sys
+
+# Check if two command line arguments are provided
+if len(sys.argv) == 3:
+    try:
+        num1 = int(sys.argv[1])
+        num2 = int(sys.argv[2])
+        # Add the two integers together
+        result = num1 + num2
+        print(f"The sum of the two numbers is: {result}")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+else:
+    print("Please provide two command line arguments.")

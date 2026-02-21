@@ -1,5 +1,5 @@
 from autogen_agentchat.agents import AssistantAgent
-from AlgoGenie.config.settings import get_model_client
+from config.settings import get_model_client
 
 model_client = get_model_client()
 

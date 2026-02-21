@@ -1,5 +1,5 @@
 from autogen_agentchat.agents import CodeExecutorAgent
-from AlgoGenie.config.docker_executor import get_docker_executor
+from config.docker_executor import get_docker_executor
 
 def get_code_executor_agent():
     """
