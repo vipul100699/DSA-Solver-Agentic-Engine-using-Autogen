@@ -11,5 +11,6 @@ dependencies = [
     "autogen-ext[docker]>=0.7.5",
     "dotenv>=0.9.9",
     "openai>=2.21.0",
+    "streamlit>=1.54.0",
     "tiktoken>=0.12.0",
 ]
