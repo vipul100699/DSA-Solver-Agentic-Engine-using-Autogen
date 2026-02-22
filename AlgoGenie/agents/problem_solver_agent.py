@@ -14,7 +14,7 @@ def get_problem_solver_agent():
         name="DSA_Problem_Solver_Agent",
         description="An Agent that solves DSA Problems",
         model_client=model_client,
-        system_message='''
+        system_message="""
             You are a problem solver agent that is an expert in solving DSA problems.
             You will be working with code executor agent to execute the code.
             You will be given a task and you should:
@@ -27,8 +27,19 @@ def get_problem_solver_agent():
             7. Once the code has been executed and if the same has been done successfully, you have the results.
             8. You should explain the code execution results.
 
+            Once the code and explanation is done, you should ask the code executor agent to save the code in a file like this:
+            ```python
+            code = '''
+                print("Hello World")
+            '''
+            with open('solution.py', 'w') as f:
+                f.write(code)
+            ```
+            If a solution.py file already exists, you should ask the code executor agent to overwrite it.
+            If the code execution fails, you should ask the code executor agent to retry the code execution.
+            You should send the above code block to the code executor agent so that it can save the code in a file. Make sure to provide the code in a code block.
             At the end, once the code has been executed successfully, you have to say "STOP" to stop the conversation.
-            '''        
+        """   
     )
 
     return problem_solver_agent

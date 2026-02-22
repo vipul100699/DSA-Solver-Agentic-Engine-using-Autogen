@@ -1,0 +1,40 @@
+code = '''
+import sys
+import subprocess
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+        for j in range(0, n - i - 1):
+            # If the element found is greater than the next element, swap them
+            if arr[j] > arr[j + 1] :
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    print("Sorted array is:", arr)
+    return arr
+
+# Test cases
+print("Test case 1:")
+arr = [64, 34, 25, 12, 22, 11, 90]
+arr = bubble_sort(arr)
+assert arr == [11, 12, 22, 25, 34, 64, 90], f"Expected [11, 12, 22, 25, 34, 64, 90], got {arr}"
+
+print("Test case 2:")
+arr = [1, 5, 3, 9, 2, 6, 8, 7, 4]
+arr = bubble_sort(arr)
+assert arr == [1, 2, 3, 4, 5, 6, 7, 8, 9], f"Expected [1, 2, 3, 4, 5, 6, 7, 8, 9], got {arr}"
+
+print("Test case 3:")
+arr = [10, 7, 8, 9, 1, 5]
+arr = bubble_sort(arr)
+assert arr == [1, 5, 7, 8, 9, 10], f"Expected [1, 5, 7, 8, 9, 10], got {arr}"
+print("All test cases passed successfully.")
+'''
+
+# Overwrite the existing solution.py file with a new version of the code
+with open('solution.py', 'w') as f:
+    f.write(code)

@@ -1,0 +1,9 @@
+def add_numbers(num1, num2):
+    # Define the function with two parameters
+    result = num1 + num2
+    return result
+
+# Test cases
+print(add_numbers(10, 20))
+print(add_numbers(-5, 5))
+print(add_numbers(0, 0))

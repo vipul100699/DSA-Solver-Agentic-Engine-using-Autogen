@@ -1,0 +1,11 @@
+# Test Case 1: Add two integers
+print(add_numbers(5, 7))  # Expected Output: 12
+
+# Test Case 2: Add two floats
+print(add_numbers(5.5, 7.5))  # Expected Output: 13.0
+
+# Test Case 3: TypeError for a non-integer or float number (string)
+try:
+    print(add_numbers(5, '7'))
+except TypeError as e:
+    print(e)  # Expected Output: Both numbers should be integers or floats

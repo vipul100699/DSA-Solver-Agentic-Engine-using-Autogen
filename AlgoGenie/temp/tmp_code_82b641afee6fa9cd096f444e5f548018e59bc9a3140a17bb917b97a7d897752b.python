@@ -1,0 +1,4 @@
+def add_numbers(num1, num2):
+    # Define the function with two parameters
+    result = num1 + num2
+    return result

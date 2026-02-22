@@ -1,0 +1,8 @@
+def add_numbers(num1, num2):
+    # Check if both numbers are integers or floats
+    if isinstance(num1, (int, float)) and isinstance(num2, (int, float)):
+        # Add the numbers and return the result
+        return num1 + num2
+    else:
+        # If not integers or floats, raise a TypeError
+        raise TypeError("Both numbers should be integers or floats")
