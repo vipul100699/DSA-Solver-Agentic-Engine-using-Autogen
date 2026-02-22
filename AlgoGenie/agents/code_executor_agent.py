@@ -9,7 +9,7 @@ def get_code_executor_agent():
     """
     docker = get_docker_executor()
     code_executor_agent = CodeExecutorAgent(
-        name="CodeExecutorAgent",
+        name="DSA_Code_Executor_Agent",
         code_executor=docker
     )
 
