@@ -1,0 +1,17 @@
+# Define a function add_to_numbers
+def add_to_numbers(a: int, b: int) -> int:
+    """
+    This function adds two numbers.
+
+    Args:
+        a (int): The first number.
+        b (int): The second number.
+
+    Returns:
+        int: The sum of the two numbers.
+    """
+    # Add a and b together
+    result = a + b
+    
+    # Return the result
+    return result

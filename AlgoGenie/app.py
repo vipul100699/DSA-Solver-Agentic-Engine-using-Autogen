@@ -11,9 +11,8 @@ st.write("Welcome to AlgoGenie, your personal DSA Problem Solver! Here you may a
 task = st.text_input("Enter your DSA problem here:", value="Write a function to add two numbers.")
 
 async def run(team, docker, task):
-    await start_docker_container(docker)
-
     try:
+        await start_docker_container(docker)
         async for message in team.run_stream(task=task):
             if isinstance(message, TextMessage):
                 print(msg:= f"{message.source}: {message.content}")
@@ -37,7 +36,7 @@ if st.button("Run"):
     async def collect_messages():
         async for msg in run(team, docker, task):
             if isinstance(msg, str):
-                if msg.startswith("User"):
+                if msg.startswith("user"):
                     with st.chat_message('user', avatar='👤'):
                         st.markdown(msg)
                 elif msg.startswith("DSA_Problem_Solver_Agent"):
@@ -47,6 +46,7 @@ if st.button("Run"):
                     with st.chat_message('assistant', avatar='💻'):
                         st.markdown(msg)
             elif isinstance(msg, TaskResult):
-                st.markdown(f"Stop Reason: {msg.stop_reason}")
+                with st.chat_message('stopper', avatar='🛑'):
+                    st.markdown(f"Stop Reason: {msg.stop_reason}")
 
     asyncio.run(collect_messages())
